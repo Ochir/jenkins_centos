@@ -17,16 +17,16 @@ Use this role to install Jenkins and install/update plugins for CentOS 6.x/7.x
 
 ## Usage
 
-### Get the code
+### Download the code
 
 ```bash
 $ git clone git@github.com:Ochir/jenkins_centos.git
 ```
 
 
-### Create a hosts file
+### Create a hosts file (inventory)
 
-Following example make ansible aware of the Virtual box reachable on localhost port 3022.
+Following example makes Ansible aware of the VirtualBox virtual machine with CentOS reachable at localhost port 3022.
 
 ```bash
 $ vim hosts
@@ -60,7 +60,7 @@ Jenkins plugins to be installed automatically during provisioning. You can alway
 
 ### Run the playbook
 
-First create a playbook including the jenkins role, naming it test.yml.
+ Create a playbook including the jenkins role, naming it test.yml.
 
 ```yml
 - hosts: jenkins
@@ -80,7 +80,7 @@ $ ansible-playbook  -i hosts test.yml --ask-sudo-pass
 ### Example output
 
 ```
-nsible-playbook -i hosts test.yml --ask-sudo-pass
+ansible-playbook -i hosts test.yml --ask-sudo-pass
 sudo password: 
 
 PLAY [jenkins] **************************************************************** 

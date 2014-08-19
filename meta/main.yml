@@ -1,17 +1,16 @@
 ---
-dependencies:
-  - { role: geerlingguy.java }
+dependencies: []
 
 galaxy_info:
   author: Ochir
   description: Jenkins CI
-  company: "Midwestern Mac, LLC"
-  license: "license (BSD, MIT)"
-  min_ansible_version: 1.4
+  company:  Ochir
+  min_ansible_version: 1.6
   platforms:
-  - name: EL
+  - name: CentOS
     versions:
     - 6
+    - 7
   categories:
     - development
     - packaging

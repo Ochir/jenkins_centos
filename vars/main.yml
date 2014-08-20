@@ -1,5 +1,6 @@
 ---
 hostname: localhost
+jenkins_enabled: yes
 jenkins_jar_location: /opt/jenkins-cli.jar
 jenkins_plugins:
   - git

@@ -26,7 +26,7 @@ $ git clone git@github.com:Ochir/jenkins_centos.git
 
 ### Create a hosts file (inventory)
 
-Following example makes Ansible aware of the VirtualBox virtual machine with CentOS reachable at localhost port 3022.
+Following example makes Ansible aware of the VirtualBox virtual machine with CentOS reachable at localhost port 3022 instead of usual 22.
 
 ```bash
 $ vim hosts

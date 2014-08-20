@@ -1,11 +1,11 @@
 ---
 # Install Jenkins repository
 
-- name: jenkins-install | Check that Jenkins repo is installed.
+- name: install | Check that Jenkins repo is installed.
   get_url: url=http://pkg.jenkins-ci.org/redhat/jenkins.repo dest=/etc/yum.repos.d/jenkins.repo
 
-- name: jenkins-install | Add Jenkins repo GPG key.
+- name: install | Add Jenkins repo GPG key.
   rpm_key: state=present key=http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
 
-- name: jenkins-install | Check if Jenkins is installed.
+- name: install | Check if Jenkins is installed.
   yum: pkg=jenkins state=installed

@@ -1,13 +1,13 @@
 ---
 # Update Jenkins instance
 
-- name: jenkins-update | Create Jenkins updates folder.
+- name: update | Create Jenkins updates folder.
   file: path=/var/lib/jenkins/updates owner=jenkins group=jenkins mode=0755 state=directory
 
-- name: jenkins-update | Update Jenkins plugin data.
+- name: update | Update Jenkins plugin data.
   shell:
     curl -L http://updates.jenkins-ci.org/update-center.json | sed '1d;$d' > /var/lib/jenkins/updates/default.json
     creates=/var/lib/jenkins/updates/default.json
 
-- name: jenkins-update | Permissions for default.json updates info.
+- name: update | Permissions for default.json updates info.
   file: path=/var/lib/jenkins/updates/default.json owner=jenkins group=jenkins mode=0755

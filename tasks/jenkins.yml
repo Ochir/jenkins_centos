@@ -4,15 +4,19 @@
 # Add Jenkins repository
 - include: repo.yml tags=jenkins
   when: ansible_distribution in [ 'CentOS', 'Red Hat Enterprise Linux' ]
+  tags: [jenkins-install]
 
 # Configure Jenkins
 - include: configure.yml tags=jenkins
   when: ansible_distribution in [ 'CentOS', 'Red Hat Enterprise Linux' ]
+  tags: [jenkins-configure]
 
   # Add Jenkins repository
 - include: update.yml tags=jenkins
   when: ansible_distribution in [ 'CentOS', 'Red Hat Enterprise Linux' ]
+  tags: [jenkins-update]
 
  # Add Jenkins plugins
 - include: plugins.yml tags=jenkins
   when: ansible_distribution in [ 'CentOS', 'Red Hat Enterprise Linux' ]
+  tags: [jenkins-plugins]
